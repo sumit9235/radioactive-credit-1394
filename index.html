@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign up Page</title>
+  <style>
+    #container{
+      width: 30%;
+      margin: auto;
+      margin-top: 50px;
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    }
+      #logo{
+        width: 100%;
+        height: 50%;
+        
+      }
+      .nav{
+        font-size: xx-large;
+        font-family:Bold,sans-serif;
+        display: flex;
+       justify-content: space-between;
+       background-image: linear-gradient(to bottom right, #C6EA8D, #FE90AF);
+      }
+      #mid{
+        background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+      }
+      .para{
+        text-align: center;
+        display: block;
+        font-size: x-large;
+        border-radius: 5px;
+        font-family: bold,Comic Sans MS;
+      }
+      #b{
+        color: green;
+      }
+      #C{
+        color: rgb(249, 1, 1);
+      }
+      #A{
+        color: rgb(250, 234, 6);
+      }
+      #signup{
+        background-image: linear-gradient(to bottom right, #72FFB6, #10D164);
+        margin-top: -6%;
+      }
+      #signup>h1{
+        text-align: center;
+        font-family:MV Boli;
+        animation: rainbow 2.5s linear;
+		    animation-iteration-count: infinite;
+      }
+      @keyframes rainbow{
+
+		100%,0%{
+			color: rgb(255,0,0);
+		}
+		8%{
+			color: rgb(255,127,0);
+		}
+		16%{
+			color: rgb(255,255,0);
+		}
+		25%{
+			color: rgb(127,255,0);
+		}
+		33%{
+			color: rgb(0,255,0);
+		}
+		41%{
+			color: rgb(0,255,127);
+		}
+		50%{
+			color: rgb(0,255,255);
+		}
+		58%{
+			color: rgb(0,127,255);
+		}
+		66%{
+			color: rgb(0,0,255);
+		}
+		75%{
+			color: rgb(127,0,255);
+		}
+		83%{
+			color: rgb(255,0,255);
+		}
+		91%{
+			color: rgb(255,0,127);
+		}
+}
+      form{
+        background-image: linear-gradient(90deg, #020024 0%, #090979 35%, #00d4ff 100%);
+      }
+      form>input{
+        display: block;
+        margin: auto;
+        width: 94.5%;
+        padding: 10px;
+        background-image: radial-gradient(circle, #ee9ca7 0%, #ffdde1 100%);
+      }
+  </style>
+</head>
+
+<body>
+  <div id="container">
+    <div id="nav-main">
+      <div class="nav">
+        <a href="./index.html">Signup</a>
+        <a href="./Signin2.html">Login</a>
+      </div>
+      <div id="mid">
+        <img src="B-Kool.png" alt="" id="logo">
+        <p class="para"><b> <span id="b">Be  </span> <span id="C">  Cool</span> <span id="A">   Always</span></b></p>
+      </div>
+    </div>
+    
+    <div id="signup">
+      <h1>Please Enter Your Details</h1>
+      <form>
+        <input type="text" id="name" placeholder="name">
+        <input type="email" id="email" placeholder="email">
+        <input type="password"  id="password" placeholder="password">
+        <input type="submit" value="Submit" style="width: 100%; font-size: x-large;color: red;"/>
+      </form>
+    </div>
+  </div>
+  
+</body>
+<script>
+  let data=JSON.parse(localStorage.getItem("account-data"))||[];
+  let signUp = document.querySelector('form');
+  signUp.addEventListener('submit',function(event){
+        event.preventDefault();
+       let account={
+        user:signUp.name.value,
+        email:signUp.email.value,
+        password:signUp.password.value
+  }
+       data.push(account);
+       localStorage.setItem("account-data",JSON.stringify(data));
+      //  alert("Signup Sucessful")
+    });
+</script>
+
+</html>
