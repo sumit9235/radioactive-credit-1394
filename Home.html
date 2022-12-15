@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page</title>
+    <style>
+        body{
+            background-image: linear-gradient(red, yellow);
+        }
+        #container{
+            width: 100%;
+            padding-top:0% ;
+        }
+        #nav{
+            display: flex;
+            justify-content: space-between;
+            background-image: linear-gradient(to bottom right, #eecda3, #ef629f);
+            border-radius: 10px;
+            position: fixed;
+            width: 99%;
+            margin-top: -10%;
+            /* margin: auto; */
+        }
+        .logo{
+            width: 150px;
+            height: 70px;
+            margin-left: 10px;
+        }
+        #men>a{
+            color: orangered;
+            font-family: sans-serif,verdana;
+        }
+        #women>a{
+            color: lightblue;
+            font-family: sans-serif,verdana;
+        }
+        #kid{
+            font-family: sans-serif,verdana;
+            margin-right: 10px;
+        }
+        #kid>a{
+            color: greenyellow;
+        }
+        #para{
+            animation: rainbow 2.5s linear;
+		    animation-iteration-count: infinite;
+        }
+        @keyframes rainbow{
+
+100%,0%{
+    color: rgb(255,0,0);
+}
+8%{
+    color: rgb(255,127,0);
+}
+16%{
+    color: rgb(255,255,0);
+}
+25%{
+    color: rgb(127,255,0);
+}
+33%{
+    color: rgb(0,255,0);
+}
+41%{
+    color: rgb(0,255,127);
+}
+50%{
+    color: rgb(0,255,255);
+}
+58%{
+    color: rgb(0,127,255);
+}
+66%{
+    color: rgb(0,0,255);
+}
+75%{
+    color: rgb(127,0,255);
+}
+83%{
+    color: rgb(255,0,255);
+}
+91%{
+    color: rgb(255,0,127);
+}
+}
+#footer a{
+    color: white;
+}
+#mid>img{
+    /* border: 1px solid red; */
+    width: 100%;
+    height: 250px;
+}
+#mid{
+    margin-top: 10%;
+}
+#banner-1{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    gap: 10px;
+}
+#banner-1>div{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    transition: transform 0.3s;
+}
+#banner-1>div:hover{
+    transform: scale(1.1);
+}
+#banner-2>div:hover{
+    transform: scale(1.1);
+}
+#banner-3>div:hover{
+    transform: scale(1.1);
+}
+#banner-1 img{
+    width: 100%;
+}
+#banner-2 img{
+    width: 100%;
+}
+#banner-2>div{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    transition: transform 0.3s;
+    
+}
+#mid>h4{
+    text-align: center;font-size: x-large;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+#banner-2{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    gap: 10px;
+    margin-top: 20px;
+}
+#banner-3{
+    display: grid;
+    margin-top: 20px;
+    grid-template-columns: repeat(2,1fr);
+    gap: 10px;
+}
+#banner-3>div>img{
+    width: 100%;
+}
+#banner-3>div{
+    transition: transform 0.3s;
+}
+#footer{
+    background-color: black;
+}
+#footer-down{
+    display: flex;
+    justify-content: space-evenly;
+}
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="nav">
+            <img src="./B-Kool.png" alt="" class="logo">
+            <p style="font-family: sans-serif,verdana; margin-top: 25px;margin-left: 10px;font-size: 20px;" id="para">Be Cool Always</p>
+            <h2 id="men"><a href="Mens.html">Men's</a></h2>
+            <h2 id="women"><a href="Womens.html">Women's</a></h2>
+            <h2 id="kid"><a href="Kids.html">Kid's</a></h2>
+        </div>
+        <div id="mid">
+            &nbsp;
+            <img src="Welcome.webp" alt="" style="border-radius: 10px;">
+            <h4>POPULAR CATEGORIES</h4>
+            <div id="banner-1">
+                <div>
+                    <img src="https://images.bewakoof.com/uploads/grid/app/category-box-new-printed-tees-1668765004.jpg" alt="">
+                </div>
+                <div>
+                    <img src="https://images.bewakoof.com/uploads/grid/app/category-box-new-e-1670938024.jpg" alt="">
+                </div>
+                <div>
+                    <img src="https://images.bewakoof.com/uploads/grid/app/category-box-new-1-1670504700.jpg" alt="">
+                </div>
+                <div>
+                    <img src="https://images.bewakoof.com/uploads/grid/app/category-box-new-d-1670923576.jpg" alt="">              
+                </div>
+                <div>
+                    <img src="https://images.bewakoof.com/uploads/grid/app/category-box-new-2-1670504700.jpg" alt="">
+                </div>
+            </div>
+            <h4>LITTLE LADY BOUTIQUE</h4>
+            <div id="banner-2">
+                <div>
+                    <img src="https://images.bewakoof.com/uploads/grid/app/category-box-new-fullsleevetees-1668773243.jpg" alt="">
+                </div>
+                <div>
+                    <img src="https://images.bewakoof.com/uploads/grid/app/category-box-new-c-1670923575.jpg" alt="">
+                </div>
+                <div>
+                    <img src="https://images.bewakoof.com/uploads/grid/app/category-box-new-4-1670504697.jpg" alt="">
+                </div>
+                <div>
+                    <img src="https://images.bewakoof.com/uploads/grid/app/category-box-new-6-1670504698.jpg" alt="">
+                </div>
+                <div>
+                    <img src="https://images.bewakoof.com/uploads/grid/app/category-box-new-5-1670504699.jpg" alt="">
+                </div>
+            </div>
+            <h4>THE GANG'S FAVOURITES</h4>
+            <div id="banner-3">
+                <div>
+                    <img src="https://images.bewakoof.com/uploads/grid/app/new-mid-banner-clearance-zone-1670505866.jpg" alt="">
+                </div>
+                <div>
+                    <img src="https://images.bewakoof.com/uploads/grid/app/new-mid-banner-trendy-jogs-common-1670506775.jpg" alt="">
+                </div>
+                <div>
+                    <img src="https://images.bewakoof.com/uploads/grid/app/new-mid-banner-windcheaters-m-1670248088.jpg" alt="">
+                </div>
+                <div>
+                    <img src="https://images.bewakoof.com/uploads/grid/app/midsize-banner-printed-oversized-tees-m-1670846089.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        &nbsp;
+        <img src="https://images.bewakoof.com/uploads/grid/app/Desktop-Strip-3-1669022420.jpg" alt="" style="width: 100%;">
+        &nbsp;
+        <img src="https://images.bewakoof.com/uploads/grid/app/Desktop-Strip-Common-1669986431.jpg" alt="" style="width: 100%;">
+        &nbsp;
+        <div id="footer">
+            <img src="B-Kool.png" alt="" class="logo">
+            <div id="footer-down">
+                <div>
+                    <h5 style="color: yellow; font-family: calibri;font-size: x-large;">CUSTOMER SERVICE</h5>
+                    <p><a href="https://www.bewakoof.com/contact-us/order-delivery-payment">Contact us</a></p>
+                    <p><a href="https://www.bewakoof.com/login?ref=/myaccount/orders">Track order</a></p>
+                    <p><a href="https://www.bewakoof.com/login?ref=/myaccount/orders?status=returned">Return order</a></p>
+                    <p><a href="https://www.bewakoof.com/contact-us/order-delivery-payment">Cancel order</a></p>
+                </div>
+                <div>
+                    <h5 style="color: yellow; font-family: calibri;font-size: x-large;">COMPANY</h5>
+                    <p><a href="https://www.bewakoof.com/about-us/our-story">About us</a></p>
+                    <p><a href="https://www.bewakoof.com/careers">We'r hiring</a></p>
+                    <p><a href="https://www.bewakoof.com/terms-and-conditions">Term's and condition's</a></p>
+                    <p><a href="https://www.bewakoof.com/privacy-policy-and-disclaimer">Privacy policy</a></p>
+                    <p><a href="https://www.bewakoof.com/blog/">Blog</a></p>
+                </div>
+                <div>
+                    <h5 style="color: yellow; font-family: calibri;font-size: x-large;">CONNCT WITH US</h5>
+                    <p><a href="https://www.facebook.com/bewakoofcom">4.7M people like this</a></p>
+                    <p><a href="">1M Followers</a></p>
+                    <h5 style="color: yellow; font-family: calibri;font-size: x-large;">100% SECURE PAYMENT</h5>
+                    <img src="https://images.bewakoof.com/web/secure-payments-image.png" alt="">
+                </div>
+                <div>
+                    <h5 style="color: yellow; font-family: calibri;font-size: x-large;">DOWNLOAD THE APP</h5>
+                    <div id="images">
+                        <img src="https://images.bewakoof.com/web/app_android_v1.png" alt="">
+                        <img src="https://images.bewakoof.com/web/app_ios_v1.png" alt="">
+                    </div>
+                    <h5 style="color: yellow; font-family: calibri;font-size: x-large;">CONNECT WITH US</h5>
+                    <form>
+                        <input type="text" placeholder="Enter Email Id">
+                        <input type="submit">
+                    </form>
+                </div>
+            </div>
+            
+        </div>
+
+    </div>
+</body>
+</html>
