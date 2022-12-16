@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Womens section</title>
+    <style>
+        * a{
+            text-decoration: none;
+        }
+        #nav{
+            display: flex;
+            justify-content: space-between;
+            background: rgb(131,58,180);
+            background-image: linear-gradient(to bottom right, #38A2D7, #561139);
+            border-radius: 10px;
+        }
+        .logo{
+            width: 150px;
+            height: 70px;
+            padding: 10px;
+        }
+        #men>a{
+            color: #FFFF00;
+            font-family: Lucida Console;
+        }
+        #kid a{
+            color: #BC243C;
+            font-family: Lucida Console;
+        }
+        #home a{
+            color: greenyellow;
+            font-family: Lucida Console;
+        }
+        #para{
+            animation: rainbow 2.5s linear;
+            font-family:Ink Free;
+            font-size: x-large;
+		    animation-iteration-count: infinite;
+        }
+        @keyframes rainbow{
+
+100%,0%{
+    color: rgb(255,0,0);
+}
+8%{
+    color: rgb(255,127,0);
+}
+16%{
+    color: rgb(255,255,0);
+}
+25%{
+    color: rgb(127,255,0);
+}
+33%{
+    color: rgb(0,255,0);
+}
+41%{
+    color: rgb(0,255,127);
+}
+50%{
+    color: rgb(0,255,255);
+}
+58%{
+    color: rgb(0,127,255);
+}
+66%{
+    color: rgb(0,0,255);
+}
+75%{
+    color: rgb(127,0,255);
+}
+83%{
+    color: rgb(255,0,255);
+}
+91%{
+    color: rgb(255,0,127);
+}
+}
+.cart{
+    width:50px;
+    height: 65px;
+    padding: 5px;
+}
+#display{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 10px;
+            width: 90%;
+            margin: auto;
+        }
+#display>div>img{
+    width: 100%;
+    height: 200px;
+}
+#display>div{
+    padding: 20px;
+    border-radius: 10px;
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+#display>div>button:hover{
+    background-color: rgb(163, 3, 126);
+}
+select{
+    font-size: x-large;
+}
+#display>div>button{
+    font-size: x-large;
+    padding: 10px;
+    background-color: teal;
+    border-radius: 10px;
+    color: #f68fcb;
+    margin-left: 20%;
+}
+@media only screen and (min-width: 451px) and (max-width: 900px) {
+        #display{
+            grid-template-columns: repeat(2,1fr);
+        }
+
+      }
+@media only screen and (min-width: 10px) and (max-width: 450px) {
+        #display{
+            grid-template-columns: repeat(1,1fr);
+        }
+      }
+    </style>
+</head>
+<body>
+    
+    <div id="container">
+        <div id="nav">
+            <img src="./B-Kool.png" alt="" class="logo">
+            <p id="para">Be Cool Always</p>
+            <h2 id="kid"><a href="Kids.html">Kid's</a></h2>
+            <h2 id="men"><a href="Mens.html">Men's</a></h2>
+            <h2 id="home"><a href="Home.html">Home</a></h2>
+            <a href="Cart.html"><img src="cart.jpg" alt="" class="cart"></a> 
+        </div>
+        <select onchange="Sorting()">
+            <option value="H2L">High 2 Low</option>  
+            <option value="L2H">Low 2 High</option>
+        </select>
+        <div id="display">
+
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    let container=document.querySelector("#display");
+    let bag=[];
+    let Carts=JSON.parse(localStorage.getItem("favourites"))||[];
+    let Search = document.querySelector("input");
+    let url = "https://amazon24.p.rapidapi.com/api/product?categoryID=aps&keyword=Womens&country=US&page=2";
+    
+    let options = {
+      method: 'GET',
+      headers: {
+        'X-RapidAPI-Key': '28d45f9668msh1cc04d6128af003p1684d9jsn54cfea35f2f4',
+        'X-RapidAPI-Host': 'amazon24.p.rapidapi.com'
+      }
+    };
+    
+    fetch(url, options)
+        .then(res => res.json())
+        .then(json =>{
+            displayData(json.docs)
+            bag=(json.docs)
+            console.log(json.docs)
+        })
+        .catch(err => console.error(err))
+    
+        function displayData(data){
+            container.innerHTML=null
+            data.forEach((elem) => {
+                let div=document.createElement("div");
+                let image=document.createElement("img");
+                image.setAttribute("src",elem.product_main_image_url);
+                let name=document.createElement("p");
+                name.innerText=elem.product_title;
+                let price=document.createElement("p");
+                price.innerText=elem.app_sale_price;
+                let button=document.createElement("button")
+                button.textContent="Add to cart"
+                button.addEventListener("click",function(){
+                    let Carts=JSON.parse(localStorage.getItem("favourites"))||[];
+                    Carts.push(elem)
+                    localStorage.setItem("favourites",JSON.stringify(Carts));
+                });
+                div.append(image,name,price,button);
+                container.append(div)
+            });
+        }
+        function Sorting(){
+        let selected=document.querySelector("select").value
+        let ans=""
+        if(selected=="L2H"){
+            ans=bag.sort((a,b)=>{
+                return a.app_sale_price-b.app_sale_price
+            })
+        }else if(selected=="H2L"){
+            ans=bag.sort((a,b)=>{
+                return b.app_sale_price-a.app_sale_price
+            })
+        }
+        displayData(ans);
+    }
+    </script>
