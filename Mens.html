@@ -153,15 +153,15 @@ select{
     let bag=[];
     
     let Search = document.querySelector("input");
-    let url = "https://amazon24.p.rapidapi.com/api/product?categoryID=aps&keyword=Mens&country=US&page=1";
-    
+    let url = 'https://amazon24.p.rapidapi.com/api/product?categoryID=aps&keyword=Mens&country=US&page=1';
+
     let options = {
-      method: 'GET',
-      headers: {
-        'X-RapidAPI-Key': '28d45f9668msh1cc04d6128af003p1684d9jsn54cfea35f2f4',
-        'X-RapidAPI-Host': 'amazon24.p.rapidapi.com'
-      }
-    };
+  method: 'GET',
+  headers: {
+    'X-RapidAPI-Key': '169b004996msh2c9bff88b0f4f44p12c1f5jsnd41cd2a3f482',
+    'X-RapidAPI-Host': 'amazon24.p.rapidapi.com'
+  }
+};
     
     fetch(url, options)
         .then(res => res.json())
